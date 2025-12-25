@@ -1,23 +1,53 @@
-# Quadcopter Dynamics Simulator (Phase 0)
+# Quadcopter Dynamics Simulator
 
-This project aims to build a quadcopter simulation from first principles using Python.
-The focus is on understanding the underlying physics, numerical simulation, and control,
-without relying on existing autopilot or robotics frameworks.
+This project implements a quadcopter simulation from first principles using Python.
+The goal is to understand the underlying dynamics, numerical simulation, and feedback
+control involved in autonomous aerial vehicles, without relying on existing autopilot
+or robotics frameworks.
 
-## Phase 0: Project Setup & Baseline Modeling (Current)
+---
 
-The current phase establishes the foundation of the simulator.
+## Phase 0: Baseline Dynamics (Completed)
 
-### Scope
-- Project structure and repository setup
-- Definition of physical parameters
-- Formulation of basic equations of motion
-- Initial numerical simulation framework
+**Objective:**  
+Establish a physically correct simulation foundation.
 
-### Initial Focus
+**Implemented:**
 - 1D vertical (altitude) dynamics
-- Open-loop simulation using simple numerical integration
-- Visualization of state evolution over time
+- State-space formulation
+- Open-loop numerical simulation
+- Validation via expected parabolic motion under constant thrust
 
-This phase is intentionally minimal and serves as a base for progressively adding
-control, estimation, and higher-dimensional dynamics in later phases.
+---
+
+## Phase 1: Closed-Loop Control (Completed)
+
+**Objective:**  
+Stabilize the quadcopter altitude using feedback control.
+
+**Implemented:**
+- PID controller for altitude control
+- Hover thrust compensation
+- Closed-loop simulation
+- Verification via stable convergence to a desired height
+
+---
+
+## Phase 2: Sensor Modeling (In Progress)
+
+**Objective:**  
+Introduce realism by separating true state from measured state.
+
+**Current focus:**
+- Noisy altitude sensor model
+- Controller operating on noisy measurements
+- Analysis of noise impact on control performance
+
+---
+
+## Motivation
+
+This project is intended to build intuition for what real autopilot stacks
+(e.g., PX4) abstract away by implementing the core components from scratch.
+The simulator is developed incrementally, with each phase adding one layer
+of realism.
