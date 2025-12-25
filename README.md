@@ -33,15 +33,16 @@ Stabilize the quadcopter altitude using feedback control.
 
 ---
 
-## Phase 2: Sensor Modeling (In Progress)
+## Phase 2: Sensor Modeling (Completed)
 
 **Objective:**  
 Introduce realism by separating true state from measured state.
 
-**Current focus:**
-- Noisy altitude sensor model
+**Implemented:**
+- Noisy altitude (altimeter) sensor model
 - Controller operating on noisy measurements
-- Analysis of noise impact on control performance
+- Observation of steady-state jitter due to sensor noise
+- Validation of closed-loop robustness under realistic sensing
 
 ---
 
