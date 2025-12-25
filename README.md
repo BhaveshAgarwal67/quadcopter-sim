@@ -46,6 +46,26 @@ Introduce realism by separating true state from measured state.
 
 ---
 
+## Phase 3: State Estimation (Completed)
+
+**Objective:**  
+Estimate the quadcopter’s true altitude and vertical velocity from noisy sensor
+measurements using a model-based state estimator.
+
+**Implemented:**
+- Linear Kalman Filter for 1D vertical motion
+- State vector: altitude and vertical velocity
+- Prediction step using the system’s physical model
+- Measurement update using a noisy altimeter
+- Proper separation of control and estimation loops
+
+**Results:**
+- Estimated altitude closely tracks the true simulated state
+- Measurement noise is significantly reduced compared to raw sensor data
+- Stable estimation without divergence or excessive lag
+- Demonstrates correct fusion of model dynamics and sensor measurements
+
+
 ## Motivation
 
 This project is intended to build intuition for what real autopilot stacks
