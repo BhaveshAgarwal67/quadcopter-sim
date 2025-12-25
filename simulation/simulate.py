@@ -20,8 +20,8 @@ def simulate_vertical_kf(pid, kf, z_ref, m, g, dt, T):
         z_meas = altimeter(z_true)
 
         # estimation
-        x_hat = kf.update(z_meas)
-        z_est = x_hat[0, 0]
+        z_hat = kf.update(z_meas)
+        z_est = z_hat[0, 0]
 
         # control (uses estimated state)
         error = z_ref - z_est
